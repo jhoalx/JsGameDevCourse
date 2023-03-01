@@ -36,8 +36,8 @@ window.onload = () => {
             loc: [],
         }
 
-        for (let j = 0; j < state.frames; j++) {
-            let positionX = j * spriteWidth;
+        for (let i = 0; i < state.frames; i++) {
+            let positionX = i * spriteWidth;
             let positionY = index * spriteHeight;
 
             frames.loc.push({x: positionX, y: positionY})
