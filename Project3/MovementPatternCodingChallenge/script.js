@@ -60,18 +60,10 @@ let lastMousePos = {
 };
 let enemiesChasing = false;
 
-function getMousePos(canvas, e) {
-    let rect = canvas.getBoundingClientRect();
-    return {
-        x: Math.floor(e.clientX - rect.left),
-        y: Math.floor(e.clientY - rect.top)
-    };
-}
 
 canvas.addEventListener("mousemove", e => {
-    let canvasMousePos = getMousePos(canvas, e);
-    lastMousePos.x = canvasMousePos.x;
-    lastMousePos.y = canvasMousePos.y;
+    lastMousePos.x = e.offsetX;
+    lastMousePos.y = e.offsetY;
 })
 
 canvas.addEventListener("mouseleave", e => {
@@ -151,7 +143,6 @@ class Metroid {
                 MetroidEnemies = [];
 
                 setTimeout(() => {
-
                     location.reload();
                 }, 500);
             }
